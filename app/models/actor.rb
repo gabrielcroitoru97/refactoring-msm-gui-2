@@ -14,6 +14,7 @@ class Actor < ApplicationRecord
   validates(:name, presence: true)
 
   has_many(:characters)  
+  has_many(:filmography, through: :characters, source: :movie)
 
   def filmography
     the_many = Array.new
